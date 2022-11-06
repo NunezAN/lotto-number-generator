@@ -10,7 +10,6 @@ const Generator = () => {
     ln.push(getRandomNumber(1, 27));
     setLottoNumbers(ln);
   }
-  console.log(lottoNumbers);
   function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
   }
