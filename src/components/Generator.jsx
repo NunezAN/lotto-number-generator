@@ -5,13 +5,17 @@ const Generator = () => {
   function generateLottoNumbers() {
     const ln = [];
     for (let i = 0; i < 5; i++) {
-      ln.push(getRandomNumber(1, 70));
+      ln.push(getRandomNumber(1, 70,ln));
     }
-    ln.push(getRandomNumber(1, 27));
+    ln.push(getRandomNumber(1, 27,ln));
     setLottoNumbers(ln);
   }
-  function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
+  function getRandomNumber(min, max ,ln) {
+    let genNum =Math.floor(Math.random() * (max - min)) + min;
+    while (ln.includes(genNum) && ln.length <= 4){
+        genNum =Math.floor(Math.random() * (max - min)) + min;
+    }
+    return genNum;
   }
   return (
     <div className="flex flex-col justify-center items-center space-y-4">
