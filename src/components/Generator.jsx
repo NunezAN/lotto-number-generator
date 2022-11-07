@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Lottie from "lottie-react";
+import downArrow from "../arrow.json";
 
 const Generator = () => {
   const [lottoNumbers, setLottoNumbers] = useState([]);
@@ -21,7 +23,8 @@ const Generator = () => {
     <div className="flex flex-col justify-center items-center space-y-4">
       {lottoNumbers.length === 0 ? (
         <span className="text-2xl font-bold">
-          00:00:00:00:00 <span className="text-red-500">00</span>
+          {/* 00:00:00:00:00 <span className="text-red-500">00</span> */}
+          <Lottie style={{height: 32}} animationData={downArrow} />
         </span>
       ) : (
         <span className="text-2xl font-bold">
